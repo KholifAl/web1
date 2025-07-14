@@ -1,0 +1,407 @@
+/* Outer container to prevent scale clipping */
+.winmacstore-gallery-outer {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: visible !important;
+    z-index: 1;
+    padding: 32px 0 0 0;
+    background: transparent;
+}
+
+/* --- WinMacStore Gallery Only --- */
+.winmacstore-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    overflow: visible;
+}
+
+.winmacstore-horizontal-gallery {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+    gap: 32px;
+    padding: 15px 0;
+    cursor: grab;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.winmacstore-horizontal-gallery::-webkit-scrollbar {
+    display: none;
+}
+.winmacstore-horizontal-gallery:active {
+    cursor: grabbing;
+}
+.winmacstore-horizontal-gallery .gallery-item {
+    flex: 0 0 260px;
+    max-width: 260px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    padding: 18px 18px 12px 18px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255,255,255,0.10);
+}
+.winmacstore-horizontal-gallery .gallery-item:hover {
+    transform: scale(1.07);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.winmacstore-horizontal-gallery .gallery-item img {
+    width: 100%;
+    border-radius: 12px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+}
+.winmacstore-horizontal-gallery .gallery-caption {
+    text-align: center;
+    margin-top: 2px;
+}
+.winmacstore-horizontal-gallery .gallery-caption h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.winmacstore-horizontal-gallery .gallery-caption span {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Hapus semua style panah navigasi */
+.gallery-arrow,
+.gallery-arrow.prev,
+.gallery-arrow.next,
+.gallery-arrow.hidden {
+    display: none !important;
+}
+
+/* ================================================== */
+/* FILE: profesi.css (KHUSUS PROFESI.HTML)      */
+/* ================================================== */
+
+main {
+    position: relative;
+}
+
+/* 1. HERO SECTION */
+.hero-profesional {
+    background-color: #111;
+    padding-top: 150px;
+    padding-bottom: 120px;
+    min-height: 70vh;
+    position: relative;
+    color: #FFFFFF;
+    overflow: hidden; /* Mencegah blob keluar dari hero section */
+}
+
+.hero-profesional-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2; /* Di atas blob */
+}
+
+.hero-text h1 {
+    font-size: 64px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    color: var(--text-secondary);
+    max-width: 500px;
+}
+
+.hero-image img {
+    width: 280px;
+    filter: drop-shadow(0 10px 30px rgba(90, 150, 255, 0.3));
+}
+
+.hero-fade-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, #1a1a1a);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.decorative-blobs-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+}
+
+.decorative-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0;
+    animation: float-animation 15s infinite ease-in-out;
+}
+
+.blob-a {
+    width: 300px; height: 300px; top: 15%; left: -100px;
+    background-color: var(--accent-pink);
+    animation-delay: 0s;
+}
+
+.blob-b {
+    width: 350px; height: 350px; top: 50%; right: -150px;
+    background-color: var(--accent-orange);
+    animation-delay: -5s;
+}
+
+.blob-c {
+    width: 250px; height: 250px; bottom: 10%; left: 20%;
+    background-color: #5beeff;
+    animation-delay: -10s;
+}
+
+@keyframes float-animation {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+    33% { transform: translate(30px, -40px) scale(1.1); opacity: 0.25; }
+    66% { transform: translate(-20px, 20px) scale(0.9); opacity: 0.15; }
+}
+
+/* 2. PROJECT SECTION (UMUM) */
+.project-section {
+    position: relative;
+    z-index: 2;
+
+}
+
+.project-section h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+/* 3. GAYA KARTU KACA (GLASS CARD) */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: +20px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.card-icon {
+    width: 120px; height: 120px; margin-bottom: 20px; object-fit: contain;
+}
+
+.glass-card h4 {
+    font-size: 20px; font-weight: 600; margin-bottom: 5px;
+}
+
+.glass-card p {
+    color: var(--text-secondary); margin-bottom: 25px;
+}
+
+.glass-card .button-open { width: 100%; }
+.glass-card .button-open i { margin-left: 8px; }
+
+
+.gallery-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    /* (PENTING) EFEK GRADASI DI TEPI */
+    -webkit-mask-image: linear-gradient(to right, 
+        transparent, 
+        black 10%, /* Mulai terlihat */
+        black 90%, /* Mulai menghilang */
+        transparent
+    );
+    mask-image: linear-gradient(to right, 
+        transparent, 
+        black 10%, 
+        black 90%, 
+        transparent
+    );
+}
+
+/* Kontainer yang di-scroll */
+.horizontal-gallery {
+    display: flex;
+    overflow-x: auto; 
+    /* scroll-snap-type: x mandatory; Dihapus agar tidak konflik dengan JS loop */
+    scroll-behavior: smooth;
+
+    /* (DIUBAH) Padding untuk 4 item & memberi ruang untuk hover */
+    /* Kalkulasi: (100% - 25% * 4 item) / 2 = 0, jadi padding horizontal tidak perlu */
+    padding: 15px 0 ; /* Tambahkan 15px padding atas & bawah */
+
+    cursor: pointer;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.horizontal-gallery::-webkit-scrollbar {
+    display: none;
+}
+.horizontal-gallery:active {
+    cursor: grabbing;
+}
+
+
+/* Setiap item galeri */
+.gallery-item {
+    /* (DIUBAH) Lebar item agar 4 muat dalam tampilan */
+    flex: 0 0 25%; 
+    max-width: 25%;
+    
+    padding: 0 10px;
+    box-sizing: border-box;
+    scroll-snap-align: center;
+    transition: transform 0.3s;
+
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Efek hover sederhana */
+}
+
+.gallery-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* SANGAT PENTING: Menyembunyikan item di luar viewport */
+    
+    /* Efek gradasi di tepi (opsional, tapi membuat tampilan lebih rapi) */
+    -webkit-mask-image: linear-gradient(to right, 
+        transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, 
+        transparent, black 10%, black 90%, transparent);
+}
+
+/* Kontainer yang akan kita animasikan */
+.horizontal-gallery {
+    display: flex; /* Membuat semua item berjajar horizontal */
+    width: fit-content; /* Lebar kontainer menyesuaikan total lebar semua item */
+    
+    /* Ini adalah inti dari animasinya */
+    animation: marquee 40s linear infinite;
+    /* marquee: Nama animasi @keyframes kita.
+       40s:     Durasi animasi. Ganti angka ini untuk mengatur kecepatan.
+                Angka lebih besar = lebih lambat.
+                Angka lebih kecil = lebih cepat.
+       linear:  Kecepatan konstan, tidak ada percepatan/perlambatan.
+       infinite: Mengulang animasi selamanya.
+    */
+}
+
+/* Setiap item galeri */
+.gallery-item {
+    flex: 0 0 auto; /* Item tidak akan menyusut atau membesar */
+    width: 250px; /* Atur lebar item yang Anda inginkan */
+    padding: 0 10px;
+    box-sizing: content-box;
+}
+
+/* Definisi animasi @keyframes */
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        /* Pindahkan kontainer ke kiri sejauh 50% dari total lebarnya. */
+        /* Karena kita menggandakan item, 50% adalah tepat satu set penuh. */
+        transform: translateX(-50%);
+    }
+}
+
+/* (OPSIONAL) Berhentikan animasi saat kursor mouse di atas galeri */
+.gallery-wrapper:hover .horizontal-gallery {
+    animation-play-state: paused;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 15px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin-bottom: 15px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.gallery-item h4 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Gaya panah navigasi */
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(37, 37, 37, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+.gallery-arrow:hover {
+    background-color: rgba(90, 90, 90, 0.7);
+}
+.gallery-arrow.prev { left: 10px; }
+.gallery-arrow.next { right: 10px; }
+
+/* Kelas untuk menyembunyikan panah saat tidak diperlukan */
+.gallery-arrow.hidden {
+    opacity: 0;
+    pointer-events: none;
+}

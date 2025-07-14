@@ -1,0 +1,697 @@
+
+/* 1. Hero Section */
+.hero-section {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 32px 20px 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Give hero section its own background to cover blobs */
+    background-color: #121212;
+    z-index: 2;
+    /* Sits above the blobs */
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* --- DIUBAH: CSS untuk Header/Navbar --- */
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 120px;
+    font-weight: 900;
+}
+
+.hero-section footer {
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.hero-fade-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, #1a1a1a);
+    /* Gradien to the new body bg */
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* 2. About Section */
+/* REMOVED: Background color is now inherited transparently */
+.about-section {}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h1 {
+    background: linear-gradient(90deg, #8a8eff, #fd9cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.about-text h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.tags {
+    display: flex;
+    gap: 15px;
+}
+
+.tags span {
+    background-color: #262626;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s, outline 0.3s;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.tags span:hover {
+    background-color: #363636;
+    transform: scale(1.05);
+}
+
+.about-image {
+    flex-basis: 350px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* 3. Skills Section */
+.skills-section {
+    text-align: center;
+}
+
+.skills-section h2 {
+    background: linear-gradient(90deg, #ffe99a, #ff9393);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.skill-categories {
+    margin-bottom: 40px;
+}
+
+.skill-categories span {
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.skill-categories span:hover {
+    color: var(--text-primary);
+}
+
+.skill-categories span.active {
+    color: var(--text-primary);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    /* background-color: var(--card-bg); */
+    padding: 20px 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    background: rgba(30, 30, 30, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-card.soft-skill {
+    gap: 25px;
+    justify-content: flex-start;
+}
+
+.skill-card i {
+    font-size: 36px;
+    width: 50px;
+    text-align: center;
+}
+
+.skill-card.soft-skill i {
+    font-size: 36px;
+    width: 50px;
+    text-align: center;
+    color: var(--accent-orange);
+}
+
+.skill-card img {
+    width: 50px;
+    height: 50px;
+}
+
+.skill-info {
+    flex: 1;
+    text-align: left;
+}
+
+.skill-info h3 {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--accent-orange);
+    border-radius: 5px;
+    width: 0%;
+    transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.skill-card>span {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.skills-content-container {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.skill-content-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    opacity: 0;
+    filter: blur(8px);
+    transition: opacity 0.4s, filter 0.4s;
+}
+
+.skill-content-panel.active {
+    display: grid;
+    opacity: 1;
+    filter: blur(0);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* 4. Experience Section */
+/* REMOVED: Background is now transparent */
+.experience-section {
+    position: relative;
+}
+
+.gradient-text {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 50px;
+    background: linear-gradient(90deg, var(--gradient-blue), var(--gradient-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+
+.button-open:hover {
+    transform: scale(1.05);
+}
+
+/* MODIFIED: Global blob styles */
+.gradient-blob {
+    position: absolute;
+    opacity: 0.3;
+    filter: blur(120px);
+    border-radius: 50%;
+}
+
+.blob-1 {
+    width: 500px;
+    height: 500px;
+    top: 110vh;
+    /* Starts around the About section */
+    left: -15vw;
+    background: radial-gradient(circle, var(--gradient-blue), transparent 60%);
+}
+
+.blob-2 {
+    width: 600px;
+    height: 600px;
+    top: 160vh;
+    /* Sits behind the Skills section */
+    right: -20vw;
+    background: radial-gradient(circle, var(--gradient-purple), transparent 70%);
+}
+
+.blob-3 {
+    width: 450px;
+    height: 450px;
+    top: 240vh;
+    /* Sits behind the Experience section */
+    left: -10vw;
+    background: radial-gradient(circle, var(--accent-pink), transparent 75%);
+}
+
+.blob-4 {
+    width: 400px;
+    height: 400px;
+    top: 120vh;
+    /* Fills a gap */
+    left: 40vw;
+    background: radial-gradient(circle, var(--accent-orange), transparent 70%);
+}
+
+.blob-5 {
+    width: 550px;
+    height: 550px;
+    top: 290vh;
+    /* Near the bottom */
+    right: 5vw;
+    background: radial-gradient(circle, #5beeff, transparent 75%);
+}
+
+/* --- Timeline Styling --- */
+.timeline {
+    position: relative;
+    z-index: 2;
+    /* Ensure timeline is above blobs */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: rgba(255, 255, 255, 0.15);
+    top: 0;
+    bottom: 0;
+    left: 30px;
+    margin-left: -1.5px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+    padding-left: 80px;
+    margin-bottom: 30px;
+}
+
+.timeline-dot {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--text-primary);
+    border: 3px solid var(--gradient-blue);
+    top: 22px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 3;
+    transform: translateX(-50%);
+}
+
+.timeline-date {
+    position: absolute;
+    top: 20px;
+    left: -120px;
+    width: 100px;
+    text-align: right;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.timeline-content {
+    padding: 25px;
+    background: rgba(30, 30, 30, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.timeline-content h5 {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.timeline-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #cecece;
+}
+
+.timeline-item.special-column {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.special-column .timeline-content {
+    flex: 1;
+}
+
+.awards-card h3,
+.committee-card h3,
+.certificates-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.awards-card p {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.committee-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.timeline-content.certificates-card,
+.timeline-content.committee-card {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.right-column-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+
+
+/* =================================STYLING UNTUK POPUP================================= */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    /* Sembunyikan secara default */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Kelas 'active' untuk menampilkan popup */
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    /* Glass Effect */
+    background: rgba(30, 30, 30, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 25px;
+    /* Sesuai permintaan */
+    padding: 30px 40px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+    /* Animasi saat muncul */
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.popup-overlay.active .popup-content {
+    transform: scale(1);
+}
+
+.popup-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 36px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.popup-close-btn:hover {
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+.popup-content h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+    background: linear-gradient(90deg, #8a8eff, #fd9cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.committee-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 60vh;
+    /* Batas tinggi agar bisa di-scroll */
+    overflow-y: auto;
+    padding-right: 15px;
+    /* Jarak untuk scrollbar */
+}
+
+.committee-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 5px;
+}
+
+.committee-list li:last-child {
+    border-bottom: none;
+}
+
+.committee-list h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.committee-list p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Kustomisasi scrollbar di dalam popup */
+.committee-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.committee-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.committee-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.committee-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+/*
+=================================
+    STYLING UNTUK GALERI SERTIFIKAT
+=================================
+*/
+
+.certificate-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-height: 65vh;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.certificate-item {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 15px;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3; /* Menjaga rasio gambar tetap konsisten */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.certificate-item h4 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Kustomisasi scrollbar untuk galeri */
+.certificate-gallery::-webkit-scrollbar {
+  width: 8px;
+}
+.certificate-gallery::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+.certificate-gallery::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+.certificate-gallery::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}

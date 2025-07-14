@@ -1,0 +1,379 @@
+/* ================================================== */
+/* FILE: design.css (KHUSUS DESIGN.HTML)         */
+/* ================================================== */
+
+/* 1. HERO SECTION */
+.hero-design {
+    background: #111;
+    padding-top: 150px;
+    padding-bottom: 80px;
+    min-height: 60vh;
+}
+
+.hero-design .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-design .hero-text h1 {
+    font-size: 64px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.hero-design .hero-text p {
+    font-size: 20px;
+    color: var(--text-secondary);
+    max-width: 500px;
+}
+
+.hero-design .hero-image img {
+    width: 220px;
+}
+
+/* 2. PROJECT SECTION (JUDUL UMUM) */
+.project-section {
+    padding: 80px 10%;
+}
+
+.project-section h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+/* TAMBAHKAN KODE BARU INI */
+/* GAYA UNTUK SCROLLING GALLERY VERTIKAL */
+/* ======================================================= */
+/* FILE: design.css (Perubahan)                       */
+/* ======================================================= */
+
+/* HAPUS SEMUA GAYA MASONRY/SCROLLING LAMA, GANTI DENGAN INI */
+
+/* Gaya untuk Section Graphic Design secara keseluruhan */
+.graphic-design-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    min-height: auto;
+    /* Dibuat auto agar tingginya menyesuaikan konten */
+}
+
+/* Kontainer utama untuk layout 2 kolom */
+.split-layout-container {
+    display: flex;
+    align-items: center;
+    /* Membuat teks dan galeri sejajar di tengah */
+    gap: 50px;
+}
+
+/* Kolom Kiri: Teks */
+.split-layout-text {
+    flex: 1;
+    /* Lebar kolom teks */
+    max-width: 300px;
+    /* Batasi lebar agar tidak terlalu besar */
+}
+
+.split-layout-text h2 {
+    text-align: left;
+    /* Teks judul rata kiri */
+    margin-bottom: 15px;
+    /* Kurangi margin bawah */
+}
+
+.split-layout-text p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Kolom Kanan: Galeri */
+.split-layout-gallery {
+    flex: 2;
+    /* Lebar kolom galeri (lebih besar dari teks) */
+
+    /* PENTING: Padding untuk memberi ruang saat animasi scale */
+    padding: 20px 0;
+}
+
+/* Penyesuaian ukuran dan gaya kontainer galeri animasi */
+.scrolling-gallery-container {
+    display: flex;
+    gap: 20px;
+
+    /* UBAH BARIS INI agar lebih tinggi */
+    height: 80vh; 
+
+    padding: 0 10px;
+    
+    /* HAPUS BARIS INI (jika ada) */
+    /* max-height: 500px; */
+    
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+
+/* Kode untuk .scrolling-column, .scrolling-column-content, dan @keyframes tetap sama */
+.scrolling-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.scrolling-column-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    will-change: transform;
+}
+
+.scroll-up .scrolling-column-content {
+    animation: marquee-up 30s linear infinite;
+}
+
+.scroll-down .scrolling-column-content {
+    animation: marquee-down 30s linear infinite;
+}
+
+.scrolling-gallery-container:hover .scrolling-column-content {
+    /* animation-play-state: paused; */
+}
+
+.scrolling-column .masonry-item {
+    width: 100%;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.scrolling-column .masonry-item img {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+
+.scrolling-column .masonry-item:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+@keyframes marquee-up {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes marquee-down {
+    from {
+        transform: translateY(-50%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+/* Penyesuaian untuk layar lebih kecil (RESPONSIVE) */
+@media (max-width: 992px) {
+    .split-layout-container {
+        flex-direction: column;
+        /* Ubah jadi layout vertikal */
+        align-items: center;
+        gap: 30px;
+    }
+
+    .split-layout-text {
+        max-width: 500px;
+        text-align: center;
+        /* Pusatkan teks di layar kecil */
+    }
+
+    .split-layout-text h2 {
+        text-align: center;
+    }
+
+    .split-layout-gallery {
+        width: 100%;
+        flex: 2;
+
+        /* UBAH BARIS INI */
+        padding: 0 20px;
+    }
+}
+
+
+/* 4. VIDEO GALLERY (HORIZONTAL) */
+/* Menggunakan gaya dari profesi.css, namun dengan beberapa penyesuaian */
+.video-gallery .gallery-item {
+    position: relative;
+    /* Diperlukan untuk play icon overlay */
+
+}
+
+.video-gallery .gallery-item img {
+    aspect-ratio: 16 / 9;
+    /* Rasio untuk video thumbnail */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    
+}
+
+.video-gallery .gallery-item:hover img {
+    filter: brightness(0.6);
+}
+
+/* Gaya untuk ikon play */
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    color: #fff;
+    font-size: 48px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    /* Agar tidak mengganggu klik */
+}
+
+.gallery-item:hover .play-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Tambahkan di css/profesi.css */
+.gallery-caption-text {
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    margin-top: 8px;
+    opacity: 0.85;
+    letter-spacing: 0.01em;
+    text-shadow: 0 2px 8px #000;
+}
+.masonry-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.masonry-item img {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* Gallery Container */
+.gallery-container {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 30px;
+       
+}
+.horizontal-gallery.video-gallery {
+    display: flex;
+    gap: 40px;
+    padding: 32px 8vw;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.horizontal-gallery.video-gallery::-webkit-scrollbar {
+    display: none;
+}
+.gallery-item.design-card {
+    scroll-snap-align: start;
+    user-select: none; /* Supaya tidak select text/gambar saat drag */
+}
+.design-card {
+    background: #181818;
+    border: 1.5px solid rgba(255,255,255,0.08);
+    border-radius: 28px;
+    box-shadow: 0 2px 24px 0 rgba(0,0,0,0.13);
+    min-width: 480px;
+    max-width: 520px;
+    width: 32vw;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s cubic-bezier(.4,2,.3,1), box-shadow 0.25s;
+}
+.design-card img {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    border-radius: 22px 22px 0 0;
+    transition: transform 0.3s cubic-bezier(.4,2,.3,1);
+    background: #ffbb9e;
+    display: block;
+}
+.design-card:hover {
+    transform: translateY(-16px) scale(1.03);
+    box-shadow: 0 8px 40px 0 rgba(0,0,0,0.22);
+    z-index: 2;
+}
+.design-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.08);
+}
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 18px 22px 16px 22px;
+    background: #181818;
+    border-radius: 0 0 22px 22px;
+    min-height: 60px;
+}
+.card-title {
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-align: left;
+    max-width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-year {
+    font-size: 1.18rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00eaff 0%, #1e90ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    letter-spacing: 0.02em;
+    margin-left: 12px;
+}
+
+
+@media (max-width: 900px) {
+    .design-card {
+        min-width: 70vw;
+        max-width: 90vw;
+        height: 220px;
+    }
+    .card-meta {
+        padding: 12px 12px 10px 12px;
+        min-height: 40px;
+    }
+    .card-title, .card-year {
+        font-size: 1rem;
+    }
+}

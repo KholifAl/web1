@@ -146,6 +146,10 @@
 /* 3. Skills Section */
 .skills-section {
     text-align: center;
+    /* margin-bottom: 30px; */
+
+    padding-bottom: 0;
+    /* padding: 0; */
 }
 
 .skills-section h2 {
@@ -159,6 +163,9 @@
 
 .skill-categories {
     margin-bottom: 40px;
+
+
+
 }
 
 .skill-categories span {
@@ -184,6 +191,8 @@
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    /* background-color: #8a8eff; */
+    padding-top: 10px;
 }
 
 .skill-card {
@@ -199,6 +208,12 @@
     -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .skill-card.soft-skill {
@@ -289,6 +304,8 @@
 /* REMOVED: Background is now transparent */
 .experience-section {
     position: relative;
+    padding-top: 10px;
+
 }
 
 .gradient-text {
@@ -638,7 +655,7 @@
     STYLING UNTUK GALERI SERTIFIKAT
 =================================
 */
-
+       
 .certificate-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -667,7 +684,7 @@
 .certificate-item img {
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3; /* Menjaga rasio gambar tetap konsisten */
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 12px;
@@ -695,3 +712,5 @@
 .certificate-gallery::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
 }
+
+/* Animasi pop up in saat scroll */

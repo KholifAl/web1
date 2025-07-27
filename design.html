@@ -11,20 +11,25 @@
 
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/design.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
     <div id="navbar-placeholder"></div>
 
     <main>
-        <section class="hero-design">
+        <section class="hero-design animate-pop-in">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Design</h1>
                     <p>Kumpulan karya desain grafis, video, dan UI/UX.</p>
                 </div>
                 <div class="hero-image">
-                    <img src="https://i.ibb.co/L5rK13x/Artboard-8.png" alt="Design Icon">
+                    <model-viewer src="models/brush.glb" alt="3D Abstract Model" camera-controls auto-rotate
+                        disable-zoom disable-pan style="width: 320px; height: 320px; background: transparent;" min-camera-orbit="auto 90deg auto"
+                  max-camera-orbit="auto 90deg auto">
+                    </model-viewer>
                 </div>
             </div>
         </section>
@@ -32,7 +37,7 @@
         <section class="project-section graphic-design-section">
             <div class="split-layout-container">
 
-                <div class="split-layout-text">
+                <div class="split-layout-text animate-pop-in">
                     <h2>Graphic Design</h2>
                     <p>Koleksi desain poster, infografis, dan materi promosi lainnya yang dibuat untuk berbagai acara
                         dan keperluan organisasi.</p>
@@ -40,130 +45,183 @@
 
                 <div class="split-layout-gallery">
                     <div class="scrolling-gallery-container">
-                        <div class="scrolling-column scroll-up">
+                        <div class="scrolling-column scroll-up animate-pop-in">
                             <div class="scrolling-column-content">
-                                <a href="#" class="masonry-item">
-                                    <img src="https://i.ibb.co/mS2Qf3w/1.png" alt="Desain Infografis 1">
-                                    <span class="gallery-caption-text">Infografis 1</span>
-                                </a>
-                                <a href="#" class="masonry-item">
-                                    <img src="https://i.ibb.co/k5zJm2w/2.png" alt="Desain Infografis 2">
-                                    <span class="gallery-caption-text">Infografis 2</span>
-                                </a>
+                                <div class="masonry-item">
+                                    <img src="images/graphics/KESAKTIAN.png" alt="Desain Infografis 1">
+                                    <span class="gallery-caption-text">Commemoration Poster</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <img src="images/graphics/info2.png" alt="Desain Infografis 2">
+                                    <span class="gallery-caption-text">Infographics</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <img src="images/graphics/avatar.png" alt="Poster">
+                                    <span class="gallery-caption-text">Poster</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <video src="images/graphics/bumper2.mp4" autoplay loop muted playsinline
+                                        style="width:100%; border-radius:12px; object-fit:cover; display:block;">
+                                    </video>
+                                    <span class="gallery-caption-text">Bumper Video</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <img src="images/graphics/cv1.png" alt="Desain Infografis 2">
+                                    <span class="gallery-caption-text">Poster</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <video src="images/graphics/logoent.mp4" autoplay loop muted playsinline
+                                        style="width:100%; border-radius:12px; object-fit:cover; display:block;">
+                                    </video>
+                                    <span class="gallery-caption-text">Logo Animation</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="scrolling-column scroll-down">
+
+                        <div class="scrolling-column scroll-down animate-pop-ind">
                             <div class="scrolling-column-content">
-                                <a href="#" class="masonry-item">
-                                    <img src="https://i.ibb.co/V3C8yZV/3.png" alt="Desain Poster 1">
-                                    <span class="gallery-caption-text">Poster 1</span>
-                                </a>
-                                <a href="#" class="masonry-item">
-                                    <img src="https://i.ibb.co/xXSWD1T/4.png" alt="Desain Feed Instagram">
-                                    <span class="gallery-caption-text">Feed Instagram</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="scrolling-column scroll-up">
-                            <div class="scrolling-column-content">
-                                <a href="#" class="masonry-item">
-                                    <img src="https://i.ibb.co/wzH0s1D/5.png" alt="Desain Poster 2">
-                                    <span class="gallery-caption-text">Poster 2</span>
-                                </a>
-                                <a href="#" class="masonry-item">
-                                    <img src="https://i.ibb.co/5hDgpzP/6.png" alt="Desain Twibbon">
+                                <div class="masonry-item">
+                                    <video src="images/graphics/bumper1.mp4" autoplay loop muted playsinline
+                                        style="width:100%; border-radius:12px; object-fit:cover; display:block;">
+                                    </video>
+                                    <span class="gallery-caption-text">Bumper Video</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <img src="images/graphics/pamflet.png" alt="Desain Poster 1">
+                                    <span class="gallery-caption-text">Poster</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <img src="images/graphics/jersey.png" alt="Desain Poster 1">
+                                    <span class="gallery-caption-text">Jersey Design</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <video src="images/graphics/logoent2.mp4" autoplay loop muted playsinline
+                                        style="width:100%; border-radius:12px; object-fit:cover; display:block;">
+                                    </video>
+                                    <span class="gallery-caption-text">Logo Animation</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <img src="images/graphics/ilustrasi.jpg" alt="Desain Infografis 2">
+                                    <span class="gallery-caption-text">Illustration</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <img src="images/graphics/greet.png" alt="Desain Poster 1">
+                                    <span class="gallery-caption-text">Greetings</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <video src="images/graphics/twibbon.mp4" autoplay loop muted playsinline
+                                        style="width:100%; border-radius:12px; object-fit:cover; display:block;">
+                                    </video>
                                     <span class="gallery-caption-text">Twibbon</span>
-                                </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="scrolling-column scroll-up animate-pop-in">
+                            <div class="scrolling-column-content">
+                                <div class="masonry-item">
+                                    <img src="images/graphics/feed2.jpg" alt="Desain Twibbon">
+                                    <span class="gallery-caption-text">Feeds Instagram</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <video src="images/graphics/feeds.mp4" autoplay loop muted playsinline
+                                        style="width:100%; border-radius:12px; object-fit:cover; display:block;">
+                                    </video>
+                                    <span class="gallery-caption-text">Profile Animation</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <img src="images/graphics/info1.png" alt="Desain Twibbon">
+                                    <span class="gallery-caption-text">Infographics</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <img src="images/graphics/final.png" alt="Desain Twibbon">
+                                    <span class="gallery-caption-text">Infographics</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <video src="images/graphics/panitiacard.mp4" autoplay loop muted playsinline
+                                        style="width:100%; border-radius:12px; object-fit:cover; display:block;">
+                                    </video>
+                                    <span class="gallery-caption-text">Profile Animation</span>
+                                </div>
+                                <div class="masonry-item">
+                                    <img src="images/graphics/oprec.png" alt="Desain Twibbon">
+                                    <span class="gallery-caption-text">Oprec Poster</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
         <section class="project-section">
-            <h2>Video and Other Design</h2>
-            <div class="gallery-container">
-                <div class="horizontal-gallery video-gallery" id="videoGallery">
-                    <div class="gallery-item design-card">
-                        <img src="images/prof.png" alt="Video 1" draggable="false">
-                        <div class="card-meta">
-                            <span class="card-title">UI Rancob Website Design</span>
-                            <span class="card-year">2023</span>
-                        </div>
+            <div class="animate-pop-in">
+                 <h2>Video and Other Design</h2>
+            </div>
+           
+            <div class="swiper video-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide animate-pop-in">
+                        <a href="https://kholifal.github.io/ngitungbareng" target="_blank" style="text-decoration:none; color:inherit;">
+                            <div class="modern-card">
+                                <div class="icon-container">
+                                    <img src="images/graphics/rancob-icon.png" alt="Video Icon">
+                                </div>
+                                <div class="card-title-main">Website<br>Demo</div>
+                                <div class="card-meta">
+                                    <span class="card-title">Rancob Website Demo</span>
+                                    <span class="card-year">2023</span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="gallery-item design-card">
-                        <img src="images/prof.png" alt="Video 2" draggable="false">
-                        <div class="card-meta">
-                            <span class="card-title">Company Profile</span>
-                            <span class="card-year">2022</span>
-                        </div>
+                    <div class="swiper-slide animate-pop-in">
+                        <a href="https://kholifal.github.io/maricerita.id/" target="_blank" style="text-decoration:none; color:inherit;">
+                            <div class="modern-card">
+                                <div class="icon-container">
+                                    <img src="images/graphics/srawung-icon.png" alt="Video Icon">
+                                </div>
+                                <div class="card-title-main">Website<br>Demo</div>
+                                <div class="card-meta">
+                                    <span class="card-title">Srawung Website Demo</span>
+                                    <span class="card-year">2023</span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="gallery-item design-card">
-                        <img src="images/prof.png" alt="Video 3" draggable="false">
-                        <div class="card-meta">
-                            <span class="card-title">Teaser Event</span>
-                            <span class="card-year">2021</span>
-                        </div>
+                    <div class="swiper-slide animate-pop-in">
+                        <a href="https://youtu.be/wydOiBZVJmw?si=MfM-Rk_xGYMzNyw4" target="_blank" style="text-decoration:none; color:inherit;">
+                            <div class="modern-card">
+                                <div class="icon-container">
+                                    <img src="images/graphics/fmipa-icon.png" alt="Video Icon">
+                                </div>
+                                <div class="card-title-main">360<br>Video</div>
+                                <div class="card-meta">
+                                    <span class="card-title">Fmipa Tour Virtual</span>
+                                    <span class="card-year">2022</span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <!-- Tambahkan item lain sesuai kebutuhan -->
+                    
+                    <!-- Tambahkan slide lain sesuai kebutuhan -->
                 </div>
+                <!-- <div class="swiper-button-prev"><i class="fa-solid fa-chevron-left"></i></div> -->
+                <!-- <div class="swiper-button-next"><i class="fa-solid fa-chevron-right"></i></div> -->
             </div>
         </section>
     </main>
+    <script>
+
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script src="js/design.js"></script>
     <script src="js/navbar.js"></script>
-    <script>
-const slider = document.getElementById('videoGallery');
-let isDown = false;
-let startX;
-let scrollLeft;
+    <!-- Swiper JS -->
+   
 
-// Mouse events
-slider.addEventListener('mousedown', (e) => {
-  isDown = true;
-  slider.classList.add('active');
-  slider.style.scrollSnapType = 'none';
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener('mouseleave', () => {
-  isDown = false;
-  slider.classList.remove('active');
-  slider.style.scrollSnapType = 'x mandatory';
-});
-slider.addEventListener('mouseup', () => {
-  isDown = false;
-  slider.classList.remove('active');
-  slider.style.scrollSnapType = 'x mandatory';
-});
-slider.addEventListener('mousemove', (e) => {
-  if(!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 1.2;
-  slider.scrollLeft = scrollLeft - walk;
-});
-
-// Touch events (untuk mobile)
-slider.addEventListener('touchstart', (e) => {
-  isDown = true;
-  slider.style.scrollSnapType = 'none';
-  startX = e.touches[0].pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener('touchend', () => {
-  isDown = false;
-  slider.style.scrollSnapType = 'x mandatory';
-});
-slider.addEventListener('touchmove', (e) => {
-  if(!isDown) return;
-  const x = e.touches[0].pageX - slider.offsetLeft;
-  const walk = (x - startX) * 1.2;
-  slider.scrollLeft = scrollLeft - walk;
-});
-</script>
+   
 
 </body>
 

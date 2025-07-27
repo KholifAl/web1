@@ -109,3 +109,28 @@ nav ul { list-style: none; display: flex; gap: 40px; }
 .certificate-gallery::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius: 10px; }
 .certificate-gallery::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 10px; }
 .certificate-gallery::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.3); }
+
+.button-open {
+    font-weight: 500;
+    font-size: medium;
+}
+
+/* Animasi pop up in saat scroll */
+@keyframes popInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.animate-pop-in {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+    transition: opacity 1s, transform 1s;
+}
+.animate-pop-in.visible {
+    animation: popInUp 1s cubic-bezier(.4,2,.3,1) both;
+}

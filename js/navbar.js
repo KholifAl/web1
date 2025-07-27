@@ -47,3 +47,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // (Kode popup committee dan sertifikat Anda tetap berada di bawah sini)
     // ...
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.animate-pop-in').forEach(el => {
+        observer.observe(el);
+    });
+});

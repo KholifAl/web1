@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swiper Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        body {
+            background: #181818;
+            color: #fff;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+        .swiper {
+            width: 90vw;
+            max-width: 700px;
+            margin: 40px auto;
+            padding-bottom: 40px;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none;
+        }
+        .modern-card {
+            background: linear-gradient(135deg, #232c4e 0%, #1cb5a3 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+            width: 320px;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            overflow: visible;
+            transition: transform 0.3s cubic-bezier(.4,2,.3,1), box-shadow 0.3s;
+        }
+        .modern-card:hover {
+            transform: translateY(-10px) scale(1.04);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            z-index: 2;
+        }
+        .modern-card .icon-container {
+            position: absolute;
+            left: 24px;
+            top: 24px;
+            width: 110px;
+            height: 110px;
+            z-index: 2;
+        }
+        .modern-card .icon-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s cubic-bezier(.4,2,.3,1), box-shadow 0.3s;
+        }
+        .modern-card:hover .icon-container img {
+            transform: scale(1.13);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.22);
+        }
+        .modern-card .card-title-main {
+            position: absolute;
+            right: 24px;
+            bottom: 60px;
+            color: #fff;
+            font-size: 1.7rem;
+            font-weight: 700;
+            text-align: right;
+            line-height: 1.1;
+            text-shadow: 0 2px 8px #000;
+            z-index: 4;
+        }
+        .modern-card .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 18px 10px 18px;
+            background: #181818;
+            border-radius: 0 0 18px 18px;
+            min-height: 38px;
+            gap: 12px;
+            font-size: 1rem;
+        }
+        .modern-card .card-year {
+            font-size: 1.08rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #00eaff 0%, #1e90ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            margin-right: auto;
+            margin-left: 0;
+        }
+        .modern-card .card-title {
+            margin-left: auto;
+            font-size: 1rem;
+            color: #fff;
+            font-weight: 500;
+            text-align: right;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #00eaff;
+        }
+        @media (max-width: 900px) {
+            .modern-card {
+                width: 90vw;
+                min-width: 0;
+                max-width: 98vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="modern-card">
+                    <div class="icon-container">
+                        <img src="images/graphics/icon-video.png" alt="Video Icon">
+                    </div>
+                    <div class="card-title-main">Video<br>Analis</div>
+                    <div class="card-meta">
+                        <span class="card-title">UI Rancob Website Design</span>
+                        <span class="card-year">2023</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="modern-card">
+                    <div class="icon-container">
+                        <img src="images/graphics/icon-video.png" alt="Video Icon">
+                    </div>
+                    <div class="card-title-main">Video<br>Analis</div>
+                    <div class="card-meta">
+                        <span class="card-title">UI Rancob Website Design</span>
+                        <span class="card-year">2023</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="modern-card">
+                    <div class="icon-container">
+                        <img src="images/graphics/icon-video.png" alt="Video Icon">
+                    </div>
+                    <div class="card-title-main">Video<br>Analis</div>
+                    <div class="card-meta">
+                        <span class="card-title">UI Rancob Website Design</span>
+                        <span class="card-year">2023</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="modern-card">
+                    <div class="icon-container">
+                        <img src="images/graphics/icon-video.png" alt="Video Icon">
+                    </div>
+                    <div class="card-title-main">Video<br>Analis</div>
+                    <div class="card-meta">
+                        <span class="card-title">UI Rancob Website Design</span>
+                        <span class="card-year">2023</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="modern-card">
+                    <div class="icon-container">
+                        <img src="images/graphics/icon-video.png" alt="Video Icon">
+                    </div>
+                    <div class="card-title-main">Video<br>Analis</div>
+                    <div class="card-meta">
+                        <span class="card-title">UI Rancob Website Design</span>
+                        <span class="card-year">2023</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="modern-card">
+                    <div class="icon-container">
+                        <img src="images/graphics/icon-video.png" alt="Video Icon">
+                    </div>
+                    <div class="card-title-main">Video<br>Analis</div>
+                    <div class="card-meta">
+                        <span class="card-title">UI Rancob Website Design</span>
+                        <span class="card-year">2023</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="modern-card">
+                    <div class="icon-container">
+                        <img src="images/graphics/icon-video.png" alt="Video Icon">
+                    </div>
+                    <div class="card-title-main">Video<br>Analis</div>
+                    <div class="card-meta">
+                        <span class="card-title">UI Rancob Website Design</span>
+                        <span class="card-year">2023</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="modern-card">
+                    <div class="icon-container">
+                        <img src="images/graphics/icon-video.png" alt="Video Icon">
+                    </div>
+                    <div class="card-title-main">Video<br>Analis</div>
+                    <div class="card-meta">
+                        <span class="card-title">UI Rancob Website Design</span>
+                        <span class="card-year">2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.mySwiper', {
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+            centeredSlides: true,
+            spaceBetween: 0,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                0: { slidesPerView: 1 },
+                600: { slidesPerView: 2 },
+                900: { slidesPerView: 3 },
+            }
+        });
+    </script>
+</body>
+</html>
